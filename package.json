@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mixlayer/react-chat": "^0.0.2",
+    "@mixlayer/react-chat": "0.0.3",
     "bufferutil": "^4.0.9",
     "modelsocket": "0.0.1",
     "next": "15.4.0-canary.51",

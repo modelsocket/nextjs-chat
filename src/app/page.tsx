@@ -30,7 +30,7 @@ function EmptyState() {
 
 function Home() {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-full">
       <MixlayerChat url="/api/chat" emptyState={<EmptyState />} />
     </div>
   );
