@@ -1,103 +1,39 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { MixlayerChat } from "@mixlayer/react-chat";
+
+function MixlayerLogo({ className }: { className?: string }) {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <svg
+      className={className}
+      viewBox="0 0 205 210"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M46.9378 149.446H13.2023C5.91085 149.446 0 155.357 0 162.648V196.384C0 203.675 5.91085 209.586 13.2023 209.586H46.9378C54.2292 209.586 60.1401 203.675 60.1401 196.384V162.648C60.1401 155.357 54.2292 149.446 46.9378 149.446Z" />
+      <path d="M158.03 209.57H191.766C199.057 209.57 204.968 203.659 204.968 196.368V162.632C204.968 155.341 199.057 149.43 191.766 149.43H158.03C150.739 149.43 144.828 155.341 144.828 162.632V196.368C144.828 203.659 150.739 209.57 158.03 209.57Z" />
+      <path d="M191.766 0H158.015C150.731 0 144.812 5.90293 144.812 13.2023V38.6864C144.431 47.763 140.687 59.7117 134.197 65.8367C127.881 71.7873 116.662 74.7387 108.633 74.7387H96.3194C88.2901 74.7387 77.0555 71.7873 70.7559 65.8367C64.2658 59.7117 60.5209 47.763 60.1401 38.6864V13.2023C60.1401 5.9188 54.2372 0 46.9378 0H13.2023C5.90293 0 0 5.90293 0 13.2023V46.9537C0 54.2372 5.90293 60.1401 13.2023 60.1401H25.9285C42.225 60.1401 57.7758 67.8203 66.9793 81.2605C70.3116 86.1479 72.422 91.194 72.422 95.5736V121.677C72.422 128.96 78.325 134.879 85.6243 134.879H119.376C126.659 134.879 132.578 128.976 132.578 121.677V95.5736C132.578 91.194 134.688 86.1479 138.021 81.2605C147.208 67.8203 162.775 60.1401 179.072 60.1401H191.798C199.081 60.1401 205 54.2372 205 46.9378V13.2023C205 5.9188 199.097 0 191.798 0H191.766Z" />
+    </svg>
+  );
+}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+function EmptyState() {
+  return (
+    <div className="flex flex-col items-center justify-center h-full -mt-16">
+      <MixlayerLogo className="w-[84px] h-[84px] fill-gray-300" />
+      <div className="text-xl text-gray-700 font-semibold mt-8">
+        Welcome to Mixlayer
+      </div>
     </div>
   );
 }
+
+function Home() {
+  return (
+    <div className="w-screen h-screen">
+      <MixlayerChat url="/api/chat" emptyState={<EmptyState />} />
+    </div>
+  );
+}
+
+export default Home;
