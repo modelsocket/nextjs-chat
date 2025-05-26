@@ -1,5 +1,6 @@
 import { GenChunk, ModelSocket } from "modelsocket";
 import { z } from "zod";
+import { isWeatherToolEnabled, WEATHER_TOOL } from "./weather-tool";
 
 const SYSTEM_PROMPT = "You are a helpful assistant.";
 
@@ -66,7 +67,11 @@ export async function POST(request: Request) {
   const socket = await ModelSocket.connect(
     process.env.MODELSOCKET_URL || "wss://models.mixlayer.ai/ws"
   );
-  const llama = await socket.open(LLAMA_8B);
+  const llama = await socket.open(LLAMA_8B, { tools: true });
+
+  if (isWeatherToolEnabled()) {
+    await llama.install(WEATHER_TOOL);
+  }
 
   await llama.append(SYSTEM_PROMPT, { role: "system" });
 
